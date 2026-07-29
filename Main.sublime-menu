@@ -1,0 +1,38 @@
+[
+	{
+		"id": "view",
+		"caption": "View",
+		"children": [
+			{ "caption": "-", "id": "rtl_assistant" },
+			{ "caption": "RTL View", "command": "rtl_toggle", "checkbox": true }
+		]
+	},
+	{
+		"id": "preferences",
+		"children": [
+			{
+				"id": "package-settings",
+				"children": [
+					{
+						"caption": "RTL Assistant",
+						"children": [
+							{
+								"caption": "Settings",
+								"command": "edit_settings",
+								"args": {
+									"base_file": "${packages}/RTLAssistant/RTLAssistant.sublime-settings",
+									"default": "{\n\t$0\n}\n"
+								}
+							},
+							{
+								"caption": "README",
+								"command": "open_file",
+								"args": { "file": "${packages}/RTLAssistant/README.md" }
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]

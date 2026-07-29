@@ -1,0 +1,38 @@
+RTL Assistant
+=============
+
+Read and edit right-to-left text in Sublime Text.
+
+Getting started
+---------------
+
+Open a file containing Arabic, Persian, Urdu or Hebrew text, then:
+
+    Command Palette -> RTL: Toggle View on This File
+
+The same command is on the View menu, and on right-click for the tab and the
+editor. Edit in the rendered view as you normally would; your file keeps its
+original characters.
+
+To render such files automatically when they open:
+
+    Preferences -> Package Settings -> RTL Assistant -> Settings
+
+    { "rtl_auto_render": true }
+
+It only acts on files that actually contain right-to-left letters, so turning
+it on costs nothing on a codebase that has none.
+
+Two things worth knowing
+------------------------
+
+Undo in the single-tab mode steps back a word at a time rather than in
+Sublime's usual increments. The split-pane view ("RTL: Open View in a Split
+Pane") keeps native undo if you would rather have that.
+
+Multiple cursors are not supported in the rendered view.
+
+The full README covers both, plus which scripts are supported and why a few
+Pashto and Kurdish letters cannot be joined:
+
+    https://github.com/jd1378/sublime_rtl_assistant

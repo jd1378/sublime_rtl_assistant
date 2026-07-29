@@ -1,0 +1,13 @@
+[
+	{ "caption": "RTL: Toggle View on This File", "command": "rtl_toggle" },
+	{ "caption": "RTL: Open View in a Split Pane", "command": "rtl_split_open" },
+	{ "caption": "RTL: Close Split Pane View", "command": "rtl_split_close" },
+	{
+		"caption": "Preferences: RTL Assistant Settings",
+		"command": "edit_settings",
+		"args": {
+			"base_file": "${packages}/RTLAssistant/RTLAssistant.sublime-settings",
+			"default": "{\n\t$0\n}\n"
+		}
+	}
+]

@@ -1,0 +1,4 @@
+[
+	{ "caption": "-" },
+	{ "caption": "RTL View", "command": "rtl_toggle", "checkbox": true }
+]

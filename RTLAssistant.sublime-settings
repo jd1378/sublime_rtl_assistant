@@ -1,0 +1,16 @@
+{
+	// Render right-to-left files automatically when they are opened.
+	//
+	// Two things must both be true for this to happen: this setting is on,
+	// and the file actually contains right-to-left letters. A file with none
+	// is left alone, so turning this on costs nothing on a codebase that has
+	// no such text in it.
+	"rtl_auto_render": false,
+
+	// Files larger than this (in characters) are never rendered.
+	//
+	// Rendering is linear in file size and runs once when a view opens, so a
+	// very large file would stall the editor rather than merely be slow. The
+	// default is about a megabyte, which renders in well under a second.
+	"rtl_max_file_size": 1048576
+}
