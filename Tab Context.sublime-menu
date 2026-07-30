@@ -1,4 +1,6 @@
-// See Context.sublime-menu on the missing separator.
+// No leading separator: this entry hides itself on files with no right-to-left
+// text, and a separator cannot, so one here would be a divider left behind on
+// every other right-click.
 [
 	{ "caption": "RTL View", "command": "rtl_toggle_context", "checkbox": true }
 ]

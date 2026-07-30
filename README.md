@@ -37,7 +37,7 @@ pointing nowhere. Package Control installs it under the right name for you.
 ## Use
 
 Command Palette → **RTL: Toggle View on This File**. Also on the **View** menu,
-and on right-click for both the tab and the editor.
+and on right-click for the tab.
 
 Two modes:
 

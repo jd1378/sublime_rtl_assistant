@@ -502,7 +502,7 @@ class RtlToggleCommand(sublime_plugin.TextCommand):
 
 
 class RtlToggleContextCommand(RtlToggleCommand):
-    """The same toggle, for the right-click menus only.
+    """The same toggle, for the tab's right-click menu only.
 
     That menu is shared with every other installed package, so this earns its
     place there only on a file the command would actually do something to. The

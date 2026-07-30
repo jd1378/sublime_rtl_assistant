@@ -10,9 +10,9 @@ Open a file containing Arabic, Persian, Urdu or Hebrew text, then:
 
     Command Palette -> RTL: Toggle View on This File
 
-The same command is on the View menu, and on right-click for the tab and the
-editor. Edit in the rendered view as you normally would; your file keeps its
-original characters.
+The same command is on the View menu, and on right-click for the tab. Edit in
+the rendered view as you normally would; your file keeps its original
+characters.
 
 To render such files automatically when they open:
 
