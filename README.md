@@ -13,12 +13,14 @@ file keeps its original characters.
 ```
 file on disk    سلام دنیا
 without this    ﺱ ﻝ ﺍ ﻡ   ﺩ ﻥ ﯼ ﺍ      disconnected, reversed
-with this       ﺎﯿﻧﺩ ﻡﻼﺳ                joined, right to left
+with this       ﺳﻼﻡ ﺩﻧﯿﺎ                joined, right to left
 ```
 
 ## Install
 
-Package Control → *Install Package* → **RTL Assistant**.
+Package Control → *Install Package* → **RTLAssistant**.
+
+Requires Sublime Text 4.
 
 Or clone into your `Packages` directory, which you can locate with
 *Preferences → Browse Packages*:

@@ -51,8 +51,11 @@ _plugin = types.ModuleType("sublime_plugin")
 
 
 class _Base(object):
-    def __init__(self, *args):
-        pass
+    def __init__(self, view=None):
+        self.view = view
+
+    def is_visible(self):
+        return True
 
 
 _plugin.TextCommand = _Base
@@ -449,6 +452,40 @@ check("stays off after being turned off by hand",
       inplace.state_of(off), None)
 
 _sublime.load_settings = lambda name: {}
+inplace._states.clear()
+inplace._auto_declined.clear()
+
+section("the right-click entry earns its place; the palette entry is always there")
+
+
+def context_visible(view):
+    return inplace.RtlToggleContextCommand(view).is_visible()
+
+
+def palette_visible(view):
+    return inplace.RtlToggleCommand(view).is_visible()
+
+
+code = FakeView("def handler(): pass")
+check("hidden on a file with no RTL", context_visible(code), False)
+check("but the palette still offers it", palette_visible(code), True)
+
+rtl = FakeView("سلام دنیا")
+check("shown on a file with RTL", context_visible(rtl), True)
+
+inplace.turn_on(rtl)
+check("and still shown once rendered, to turn it off",
+      context_visible(rtl), True)
+inplace.turn_off(rtl)
+
+# has_rtl reads only the head of a buffer, so this is the case the always-on
+# palette entry exists for: the feature is needed and cannot be detected
+deep = FakeView("x" * shaper.RTL_SCAN_LIMIT + "سلام")
+check("hidden when the RTL text is past the scanned head",
+      context_visible(deep), False)
+check("and the palette is how you reach it", palette_visible(deep), True)
+
+inplace._states.clear()
 inplace._auto_declined.clear()
 
 section("copying yields the real characters")

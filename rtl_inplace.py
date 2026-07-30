@@ -18,10 +18,10 @@ holding presentation forms.
 import sublime
 import sublime_plugin
 
-from .rtl_shaper import (apply_visual_buffer_edit, buffer_logical_caret,
-                         buffer_visual_caret, has_rtl, step_caret, to_logical,
-                         to_visual_text, visual_span_logical_indices,
-                         visual_span_to_logical)
+from .rtl_shaper import (RTL_SCAN_LIMIT, apply_visual_buffer_edit,
+                         buffer_logical_caret, buffer_visual_caret, has_rtl,
+                         step_caret, to_logical, to_visual_text,
+                         visual_span_logical_indices, visual_span_to_logical)
 
 # marks a view that is currently rendered; also lets a reload find it again
 INPLACE_FLAG = "rtl_inplace"
@@ -73,13 +73,19 @@ def _all_text(view):
     return view.substr(sublime.Region(0, view.size()))
 
 
+def _head_text(view):
+    """As much of the buffer as has_rtl will look at, and no more, so asking
+    whether a file is right-to-left does not copy a megabyte to find out."""
+    return view.substr(sublime.Region(0, min(view.size(), RTL_SCAN_LIMIT)))
+
+
 def consider_auto(view):
     """Render this view if the setting asks for it and the text warrants it."""
     if view.id() in _states or view.id() in _auto_declined:
         return
     if not setting(view, AUTO_SETTING, False):
         return
-    if view.size() <= _max_buffer(view) and has_rtl(_all_text(view)):
+    if view.size() <= _max_buffer(view) and has_rtl(_head_text(view)):
         turn_on(view)
 
 
@@ -493,6 +499,22 @@ class RtlToggleCommand(sublime_plugin.TextCommand):
 
     def is_enabled(self):
         return self.view.settings().get("rtl_source_id") is None
+
+
+class RtlToggleContextCommand(RtlToggleCommand):
+    """The same toggle, for the right-click menus only.
+
+    That menu is shared with every other installed package, so this earns its
+    place there only on a file the command would actually do something to. The
+    command palette and the View menu keep the unconditional rtl_toggle, which
+    is where someone looks for a feature they have not found yet -- and where
+    they can still force it on a file whose right-to-left text sits past the
+    stretch has_rtl reads.
+    """
+
+    def is_visible(self):
+        # already rendered, so turning it back off is offered in the same place
+        return self.view.id() in _states or has_rtl(_head_text(self.view))
 
 
 class RtlInplaceListener(sublime_plugin.EventListener):

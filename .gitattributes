@@ -1,0 +1,8 @@
+# Keep development-only files out of the package Package Control builds from
+# the release tarball. Everything not listed here ships, including README.md,
+# which the Package Settings menu opens, and .python-version, which selects the
+# 3.8 plugin host.
+/.gitattributes  export-ignore
+/.gitignore      export-ignore
+/tests           export-ignore
+/tests/**        export-ignore

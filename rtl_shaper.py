@@ -776,7 +776,10 @@ def step_caret(line, logical_pos, forward, direction='auto'):
     return pos
 
 
-def has_rtl(text, limit=65536):
+RTL_SCAN_LIMIT = 65536
+
+
+def has_rtl(text, limit=RTL_SCAN_LIMIT):
     """Whether the text contains any right-to-left letter.
 
     Only the head of a large buffer is examined; this decides whether a file is

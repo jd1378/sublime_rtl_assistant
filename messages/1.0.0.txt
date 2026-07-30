@@ -1,0 +1,18 @@
+RTL Assistant 1.0.0
+===================
+
+First release.
+
+Read and edit right-to-left text in Sublime Text: Arabic contextual shaping and
+bidirectional reordering applied to the view, while the file on disk keeps its
+original characters.
+
+    Command Palette -> RTL: Toggle View on This File
+
+Two modes, one rendering the file in its own tab and one opening a second pane
+beside the real text. Both are editable. Arabic, Persian, Urdu, Sindhi, Uyghur
+and Hebrew are covered.
+
+Requires Sublime Text 4.
+
+    https://github.com/jd1378/sublime_rtl_assistant
