@@ -56,7 +56,7 @@ positions, so a word runs in the direction it reads.
 
 ## Settings
 
-Preferences → Package Settings → RTL Assistant → Settings.
+Preferences → Package Settings → RTLAssistant → Settings.
 
 ```json
 {
@@ -135,7 +135,8 @@ resynced, so the file never receives a guess.
 
 ## How it works
 
-`rtl_shaper.py` is pure Python with no Sublime imports, and does the real work:
+`lib/rtl_shaper.py` is pure Python with no Sublime imports, and does the real
+work:
 
 1. **Shaping** — each letter becomes the presentation form its neighbours call
    for, including the lam-alef ligatures.

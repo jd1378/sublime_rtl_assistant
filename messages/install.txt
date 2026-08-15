@@ -16,7 +16,7 @@ characters.
 
 To render such files automatically when they open:
 
-    Preferences -> Package Settings -> RTL Assistant -> Settings
+    Preferences -> Package Settings -> RTLAssistant -> Settings
 
     { "rtl_auto_render": true }
 

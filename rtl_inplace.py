@@ -18,10 +18,11 @@ holding presentation forms.
 import sublime
 import sublime_plugin
 
-from .rtl_shaper import (RTL_SCAN_LIMIT, apply_visual_buffer_edit,
-                         buffer_logical_caret, buffer_visual_caret, has_rtl,
-                         step_caret, to_logical, to_visual_text,
-                         visual_span_logical_indices, visual_span_to_logical)
+from .lib.rtl_shaper import (RTL_SCAN_LIMIT, apply_visual_buffer_edit,
+                             buffer_logical_caret, buffer_visual_caret,
+                             has_rtl, step_caret, to_logical, to_visual_text,
+                             visual_span_logical_indices,
+                             visual_span_to_logical)
 
 # marks a view that is currently rendered; also lets a reload find it again
 INPLACE_FLAG = "rtl_inplace"

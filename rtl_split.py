@@ -20,9 +20,10 @@ import os
 import sublime
 import sublime_plugin
 
-from .rtl_shaper import (apply_visual_edit, base_level, logical_caret,
-                         step_caret, to_logical, to_visual_text, visual_caret,
-                         visual_span_logical_indices, visual_span_to_logical)
+from .lib.rtl_shaper import (apply_visual_edit, base_level, logical_caret,
+                             step_caret, to_logical, to_visual_text,
+                             visual_caret, visual_span_logical_indices,
+                             visual_span_to_logical)
 
 # set on a mirror view; holds the id of the buffer it reflects
 SOURCE_ID = "rtl_source_id"

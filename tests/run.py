@@ -63,7 +63,7 @@ _plugin.WindowCommand = _Base
 _plugin.EventListener = _Base
 sys.modules["sublime_plugin"] = _plugin
 
-shaper = importlib.import_module(PKG_NAME + ".rtl_shaper")
+shaper = importlib.import_module(PKG_NAME + ".lib.rtl_shaper")
 inplace = importlib.import_module(PKG_NAME + ".rtl_inplace")
 
 

@@ -3,7 +3,7 @@
 	{ "caption": "RTL: Open View in a Split Pane", "command": "rtl_split_open" },
 	{ "caption": "RTL: Close Split Pane View", "command": "rtl_split_close" },
 	{
-		"caption": "Preferences: RTL Assistant Settings",
+		"caption": "Preferences: RTLAssistant Settings",
 		"command": "edit_settings",
 		"args": {
 			"base_file": "${packages}/RTLAssistant/RTLAssistant.sublime-settings",

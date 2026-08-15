@@ -1,0 +1,13 @@
+RTL Assistant 1.0.2
+===================
+
+Packaging fixes from the Package Control review. No change to what the package
+does.
+
+The shaping module moved to lib/rtl_shaper.py. Sublime loads every Python file
+at the root of a package as a plugin in its own right, so a root-level module
+imported by another was being loaded twice; a subpackage is not loaded that way.
+
+The Package Settings submenu and the settings entry in the command palette are
+now named RTLAssistant, matching the package name rather than a prettier
+version of it.
