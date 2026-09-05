@@ -172,6 +172,10 @@ Covers presentation forms against expected codepoints, bidi reordering, bracket
 pairing, mark placement, edit translation, and the in-place editing state
 machine driven through a fake view.
 
+## Bidirectional text support
+
+This project has been written from scratch, because [Bidirectional text support](https://github.com/praveenvijayan/Sublime-Text-2-BIDI) package was no longer maintained and it was written for sublime 2. So this package replaces that in the package repository.
+
 ## Licence
 
 MIT. See `LICENSE`.
